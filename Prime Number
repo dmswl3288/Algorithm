@@ -3,34 +3,24 @@
 #include<stdio.h>
 using namespace std;
 
+// 소수판별하는 알고리즘
+// 피제수를 제수로 나누어서 처음으로 나누어 떨어졌을 때 피제수와 제수가 서로 같으면 소수이다.
+
 int main()
 {
-	int a, i, j; // 제수j 는 2부터 
+	int a, i;
+	i = 2;        // 제수는 2부터 증가
 	cin >> a;
 	
-	i = a - 1;
-	j = 2;
-
-	while (1)
+	while (a%i != 0)
 	{
-		if (j <= i)
-		{
-			if (a%j == 0)
-			{
-				cout << "소수아님" << endl;
-				break;
-			}
-			else   // 나누어 떨어지지 않은 경우, 소수가 될 가능성이 있다.
-			{			
-				j++;		// 제수 증가
-			}
-		}
-		else
-		{
-			cout << "소수" << endl;
-			break;
-		}
+		i++;        // 나머지가 0이 될때까지 증가
 	}
+	if (a == i)                // 피제수와 제수가 같을 경우
+		cout << "소수" << endl;
+	else
+		cout << "소수 아님" << endl;
+
 	system("pause");
 	return 0;
 }
