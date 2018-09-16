@@ -1,0 +1,36 @@
+#include<iostream>
+#include<string>
+#include<stdio.h>
+using namespace std;
+
+int main()
+{
+	int a, i, j; // 제수j 는 2부터 
+	cin >> a;
+	
+	i = a - 1;
+	j = 2;
+
+	while (1)
+	{
+		if (j <= i)
+		{
+			if (a%j == 0)
+			{
+				cout << "소수아님" << endl;
+				break;
+			}
+			else   // 나누어 떨어지지 않은 경우, 소수가 될 가능성이 있다.
+			{			
+				j++;		// 제수 증가
+			}
+		}
+		else
+		{
+			cout << "소수" << endl;
+			break;
+		}
+	}
+	system("pause");
+	return 0;
+}
